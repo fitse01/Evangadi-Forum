@@ -60,7 +60,7 @@ function Login() {
         <input type="Submit" value="Login" />
       </form>
 
-  <Link to = {'/register'}> Register   </Link>
+  <Link to = {'/register'}> Register </Link>
     </section>
   );
 }
