@@ -1,37 +1,39 @@
-import Home from "./pages/Home";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import { Route, Routes, useNavigate } from "react-router-dom";
+// import Home from "./pages/Home";
+// import Register from "./pages/Register";
+// import Login from "./pages/Login";
+// import { Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState, createContext } from "react";
-import axios from "./axiosConfig";
-import Header from "./Components/Header/Header";
+// import axios from "./axiosConfig";
+// import Header from "./Components/Header/Header";
 import LandingLayout from "./pages/LandingLayout/LandingLayout";
+import './pages/Home/Home';
+import Home from "./pages/Home/Home";
 
-export const AppState = createContext();
+// export const AppState = createContext();
 
 function App() {
-  const [user, setuser] = useState({});
+  // const [user, setuser] = useState({});
 
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
-  async function checkUser() {
-    try {
-      const { data } = await axios.get("/users/check", {
-        header: {
-          Authorization: "Bearer" + token,
-        },
-      });
-      setuser(data);
-      // console.log(data)
-    } catch (error) {
-      navigate("/login");
-      console.log(error.response);
-    }
-  }
+  // const token = localStorage.getItem("token");
+  // const navigate = useNavigate();
+  // async function checkUser() {
+  //   try {
+  //     const { data } = await axios.get("/users/check", {
+  //       header: {
+  //         Authorization: "Bearer" + token,
+  //       },
+  //     });
+  //     setuser(data);
+  //     // console.log(data)
+  //   } catch (error) {
+  //     navigate("/login");
+  //     console.log(error.response);
+  //   }
+  // }
 
-  useEffect(() => {
-    checkUser();
-  }, []);
+  // useEffect(() => {
+  //   checkUser();
+  // }, []);
 
   return (
     // <AppState.Provider value={{ user, setuser }}>
@@ -44,7 +46,9 @@ function App() {
     //   </Routes>
     //   {/* // </div> */}
     // </AppState.Provider>
-    <LandingLayout/>
+
+    // <LandingLayout/>
+    <Home />
   );
 }
 

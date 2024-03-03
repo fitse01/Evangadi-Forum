@@ -1,13 +1,13 @@
 import React from "react";
 
-const Login = () => {
+const Login = ({setCurrentPage}) => {
   return (
     <div className="col card mt-3 p-4 text-center">
       <div>
         <h4 className="m-3"> Login to your account </h4>
         <p className="mb-2">
           Don’t have an account?{" "}
-          <a href="" className="fw-semibold text-decoration-none text-warning">
+          <a href="" onClick={()=>setCurrentPage ("signup")} className="fw-semibold text-decoration-none text-warning">
             Create a new account
           </a>
         </p>
@@ -40,6 +40,7 @@ const Login = () => {
           <button
             className="btn btn-primary fw-bold px-5 action_btn "
             type="submit"
+            
           >
             Login
           </button>

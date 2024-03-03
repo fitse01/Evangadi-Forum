@@ -1,26 +1,29 @@
 import React from "react";
 
-const SignUp = () => {
+const SignUp = ({ setCurrentPage }) => {
   return (
     <div className="col card mt-3 p-4 text-center">
       <div>
         <h4 className="m-3"> Join the network</h4>
         <p className="mb-2">
           Already have an account?
-          <a href="" className="fw-semibold text-decoration-none text-warning">
+          <a
+            href="#"
+            onClick={() => setCurrentPage("login")}
+            className="fw-semibold text-decoration-none text-warning"
+          >
             Sign in
           </a>
         </p>
       </div>
       <form action="">
         <div className="d-flex flex-column gap-3">
-
-        <input
+          <input
             type="text"
             placeholder="UserName"
             className="form-control p-3"
           />
-          
+
           <div className="d-flex">
             <input
               type="text"
@@ -50,13 +53,13 @@ const SignUp = () => {
 
         <div className="mt-3">
           <p className="mb-2">
-            I agree to the{" "}
+            I agree to the
             <a
               href=""
               className="fw-semibold text-decoration-none text-warning"
             >
               privacy policy
-            </a>{" "}
+            </a>
             and
             <a
               href=""
@@ -78,8 +81,9 @@ const SignUp = () => {
 
         <div className="">
           <a
-            href=""
+            href="#"
             className="fw-semibold text-decoration-none text-warning  mb-2"
+            onClick={() => setCurrentPage("login")}
           >
             Already have an account?
           </a>
