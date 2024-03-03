@@ -4,6 +4,8 @@ import Login from "./pages/Login";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useEffect, useState, createContext } from "react";
 import axios from "./axiosConfig";
+import Header from "./Components/Header/Header";
+import LandingLayout from "./pages/LandingLayout/LandingLayout";
 
 export const AppState = createContext();
 
@@ -32,15 +34,17 @@ function App() {
   }, []);
 
   return (
-    <AppState.Provider value={{ user, setuser }}>
-      {/* // <div className="App"> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
-      {/* // </div> */}
-    </AppState.Provider>
+    // <AppState.Provider value={{ user, setuser }}>
+    //   {/* // <div className="App"> */}
+    //   <Routes>
+    //     <Route path="/" element={<Header/>} />
+    //     {/* <Route path="/" element={<Home />} /> */}
+    //     <Route path="/login" element={<Login />} />
+    //     <Route path="/register" element={<Register />} />
+    //   </Routes>
+    //   {/* // </div> */}
+    // </AppState.Provider>
+    <LandingLayout/>
   );
 }
 

@@ -1,0 +1,14 @@
+.section_container{
+  margin-top: -1.5rem !important;
+  margin-bottom: -1.3rem !important;
+}
+
+.action_btn:hover{
+  background-color: rgb(255,133,0) !important;
+}
+.nav-item a:hover{
+  color: rgb(255,133,0) !important; 
+}
+.landing{
+  height: 100vh;
+}
