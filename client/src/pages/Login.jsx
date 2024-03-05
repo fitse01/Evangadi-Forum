@@ -13,7 +13,7 @@ function Login() {
     const passValue = passwordDom.current.value;
     if (!emailValue || !passValue) {
       alert("please provide all required information ");
-      return;
+      return
     }
 
     // so let us send request to the database

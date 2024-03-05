@@ -19,10 +19,13 @@ const LandingLayout = () => {
       >
         <section className="container d-md-flex pt-5 gap-5">
           {/* form  */}
-          {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
-          {currentPage === "signup" && (
+          {currentPage === "login" && <Login setCurrentPage={setCurrentPage}/>}
+
+          {currentPage === "signup" && (<SignUp setCurrentPage={setCurrentPage}/>)}
+
+{/* {currentPage === "signup" && (
             <SignUp setCurrentPage={setCurrentPage} />
-          )}
+          )} */}
           {/* <Login /> */}
 
           {/* message */}
