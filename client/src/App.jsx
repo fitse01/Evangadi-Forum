@@ -68,6 +68,7 @@ import LandingLayout from "./pages/LandingLayout/LandingLayout";
 // import './pages/Home/Home';
 import Home from "./pages/Home/Home";
 import Question from "./Components/AskQuestion/AskQuestion";
+import Answer from "./Components/Answer/Answer";
 
 export const AppState = createContext();
 
@@ -116,6 +117,7 @@ function App() {
         <Route path="/Login" element={<LandingLayout />} />
         <Route path="/" element={<Home />} />
         <Route  path="/questions" element={<Question/>}/>
+        <Route path="/answer"  element={<Answer/>}/>
         {/* <Route path="/login" element={<Login />} /> */}
         {/* <Route path="/register" element={<SignUp />} /> */}
       </Routes>

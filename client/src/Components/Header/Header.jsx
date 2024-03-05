@@ -4,14 +4,14 @@ import "../../index.css";
 
 const Header = () => {
   return (
-    <section class="section_container">
-      <nav class="navbar p-0 navbar-expand-lg   ">
-        <div class="container  section_container">
-          <a class="navbar-brand " href="#">
+    <section className="section_container">
+      <nav className="navbar p-0 navbar-expand-lg   ">
+        <div className="container  section_container">
+          <a className="navbar-brand " href="#">
             <img src={logo} alt="" />
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNavDropdown"
@@ -19,26 +19,26 @@ const Header = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse justify-content-end  fw-semibold"
+            className="collapse navbar-collapse justify-content-end  fw-semibold"
             id="navbarNavDropdown"
           >
-            <ul class="navbar-nav">
-              <li class="nav-item align-items-center d-flex">
-                <a class="nav-link active" aria-current="page" href="#">
+            <ul className="navbar-nav">
+              <li className="nav-item align-items-center d-flex">
+                <a className="nav-link active" aria-current="page" href="#">
                   Home
                 </a>
               </li>
-              <li class="nav-item align-items-center d-flex">
-                <a class="nav-link " href="#">
+              <li className="nav-item align-items-center d-flex">
+                <a className="nav-link " href="#">
                   How it Workes
                 </a>
               </li>
-              <li class="nav-item lign-items-center ">
-                <a class="nav-link" href="#">
-                  <button class="btn btn-primary fw-bold px-5 action_btn  ">
+              <li className="nav-item lign-items-center ">
+                <a className="nav-link" href="#">
+                  <button className="btn btn-primary fw-bold px-5 action_btn  ">
                     SIGN IN{" "}
                   </button>
                 </a>

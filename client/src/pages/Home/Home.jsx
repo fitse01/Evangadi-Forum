@@ -11,6 +11,7 @@ const Home = () => {
   const handleAskQuestionClick = () => {
     navigate('/questions'); // Navigates to the "/questions" route
   };
+ 
   return (
     <>
       <Header />

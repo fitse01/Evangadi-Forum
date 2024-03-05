@@ -1,9 +1,14 @@
 import React from "react";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 const Question = () => {
+  const navigate = useNavigate();
+  const handleAnswerClick = () => {
+    navigate('/answer'); // Navigates to the "/answer" route
+  };
   return (
-    <a href="#" className="text-decoration-none text-black">
+    <a href="#" className="text-decoration-none text-black"  onClick={handleAnswerClick}>
       <hr />
       {/* user and arow container */}
       <div className="d-flex justify-content-between">
