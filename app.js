@@ -3,6 +3,9 @@ const express = require("express");
 var app = express();
 const port = 7000;
 
+const cors = require('cors')
+app.use(cors())
+
 
 const dbConnection = require("./db/dbConfig")
 
@@ -11,6 +14,10 @@ const userRoutes = require("./routes/userRoute");
 
 // question routes midle file
 const questionRoutes = require("./routes/questionRoute");
+
+// answer routes
+const answerRoutes = require("./routes/answerRoute");
+
 
 // authentication middleware
 const authMiddleware = require("./middleware/authMiddleware")
@@ -22,13 +29,13 @@ app.use(express.json())
 // user midlewere route
 app.use("/api/users" , userRoutes)
 
+
+
 // question midlewere
 app.use("/api/question" , authMiddleware, questionRoutes)
 
-
-
-
 // answer midlewer
+app.use("/api/answers" ,authMiddleware, answerRoutes)
 
 async function start(){
   try{

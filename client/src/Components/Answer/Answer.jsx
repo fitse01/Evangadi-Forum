@@ -1,9 +1,87 @@
-import React from "react";
+import React, { useRef, useState, useContext, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import axios from "../../axiosConfig.js";
+import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
-// import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 const Answer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Parse the query string to extract the title and description
+  const queryParams = new URLSearchParams(location.search);
+  const title = queryParams.get("title");
+  const description = queryParams.get("description");
+
+  const questionid = queryParams.get("questionid");
+
+  const { user } = useContext(AppState);
+
+  //  console.log(questionid,user.userid)
+
+  const [data, setData] = useState({});
+
+  const token = localStorage.getItem("token");
+
+  const answerDom = useRef(null);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const answerValue = answerDom.current.value;
+    const userid = user.userid;
+
+    if (!questionid || !userid || !answerValue) {
+      alert("please provide all required fields");
+      return;
+    }
+
+    try {
+      await axios.post(
+        "/answers/postanswers",
+        {
+          userid: userid,
+          questionid: questionid,
+
+          answer: answerValue,
+        },
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      answerDom.current.value = "";
+
+      alert("answer posted succesfully");
+      window.location.reload();
+    } catch (error) {
+      alert(" something went wrong");
+      console.log(error.response);
+    }
+  }
+  async function getAnswer() {
+    try {
+      const response = await axios.get("/answers/all-answers", {
+        headers: {
+          Authorization: "Bearer " + token,
+          questionid: questionid,
+        },
+      });
+      //  console.log(questionid)
+
+      // console.log(response.data); // Log the response data
+      setData(response.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  }
+
+  useEffect(() => {
+    getAnswer();
+  }, []);
+
   return (
     <section>
       <Header />
@@ -13,9 +91,11 @@ const Answer = () => {
           <div className="">
             {/* top part */}
             <span className="fw-semibold fs-2 ">Question</span> <br />
-            <span className="fw-semibold fs-5">What is react-router-dom</span>
+            {/* <span className="fw-semibold fs-5">What is react-router-dom</span> */}
+            <span className="fw-semibold fs-5">{title}</span>
             <span>
-              <p>how does it work </p>
+              <p>{description} </p>
+              {/* <p>how does it work </p> */}
             </span>
           </div>
 
@@ -24,35 +104,39 @@ const Answer = () => {
             <span className="fw-semibold fs-3">Answer from the Community</span>
             {/* <hr /> */}
           </div>
-          <div>
-            <a href="#" className="text-decoration-none text-black">
-              <hr />
-              {/* user and arow container */}
-              <div className="d-flex justify-content-between">
-                <div className="d-md-flex align-items-center">
-                  {/* user and question  */}
-                  <div className="user">
-                    {/* user */}
-                    <div>
-                      <PiUserCircleDuotone />
-                    </div>
-                    <div>Fitsum </div>
-                  </div>
-                  <div>
-                    {/* question  */}
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Placeat commodi officia sequi, delectus iusto illum non
-                      reiciendis tempore!
-                    </p>
-                  </div>
-                </div>
 
-                {/* arow */}
-                {/* <div className="align-items-center">
+          <div>
+            {data.allanswer &&
+              data.allanswer.map((item, index) => (
+                <a
+                  href="#"
+                  key={index}
+                  className="text-decoration-none text-black"
+                >
+                  <hr />
+                  {/* user and arow container */}
+                  <div className="d-flex justify-content-between">
+                    <div className="d-md-flex align-items-center">
+                      {/* user and question  */}
+                      <div className="user">
+                        {/* user */}
+                        <div>
+                          <PiUserCircleDuotone />
+                        </div>
+                        {/* <div>Fitsum </div> */}
+                        <div>{item.username}</div>
+                      </div>
+                      <div>
+                        <p>{item.answer}</p>
+                      </div>
+                    </div>
+
+                    {/* arow */}
+                    {/* <div className="align-items-center">
                 </div> */}
-              </div>
-            </a>
+                  </div>
+                </a>
+              ))}
           </div>
         </div>
 
@@ -69,20 +153,17 @@ const Answer = () => {
 
           <div className="container">
             {/* form part */}
-            <form action="" className="">
-              <div cla>
-                <input
-                  type="text"
-                  placeholder="Your Answer "
-                  className="form-control py-5  "
-                />
-                {/* <textarea
+            <form action="" className="" onSubmit={handleSubmit}>
+              <div>
+                <textarea
                   class="form-control p-4"
                   id="exampleFormControlTextarea1"
                   rows="3"
-                  placeholder="Question Description "
-                ></textarea> */}
+                  placeholder="Answer"
+                  ref={answerDom}
+                ></textarea>
               </div>
+
               <div className=" mt-2">
                 <button
                   className="btn btn-primary fw-bold px-5 action_btn"

@@ -24,9 +24,7 @@ const Question = () => {
           <div>
             {/* question  */}
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              commodi officia sequi, delectus iusto illum non reiciendis
-              tempore!
+              gshdfsjgj
             </p>
           </div>
         </div>
