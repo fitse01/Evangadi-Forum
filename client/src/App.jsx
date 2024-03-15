@@ -51,8 +51,8 @@ function App() {
     checkUser();
     getQuestion();
   }, []);
-// console.log(user)
-// console.log(setuser)
+console.log(user)
+console.log(setuser)
   return (
     <AppState.Provider value={{ user, setuser, question, setQuestion }}>
       <Routes>

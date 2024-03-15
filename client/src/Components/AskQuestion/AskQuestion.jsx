@@ -1,6 +1,3 @@
-
-
-
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
@@ -11,7 +8,7 @@ import { AppState } from "../../App";
 const AskQuestion = () => {
   const navigate = useNavigate();
   const { user } = useContext(AppState);
-  // console.log(user)
+  console.log(user)
   const token = localStorage.getItem("token");
 
   const titleDom = useRef(null);
@@ -23,12 +20,14 @@ const AskQuestion = () => {
     const titleValue = titleDom.current.value;
     const descriptionValue = descriptionDom.current.value;
     const tagValue = tagDom.current.value;
-    const questionid = uuidv4();
+    const userid = await  user.userid;
 
-    console.log(user.userid);
-    
-    const userid = user.userid;
     console.log(userid);
+
+    const questionid = uuidv4();
+    console.log(questionid)
+    
+    
 
     if (
       !questionid ||
@@ -42,8 +41,7 @@ const AskQuestion = () => {
     }
 
     try {
-      const response = await axios.post(
-        "/questions/postquestions",
+      const response = await axios.post("/question/postquestions",
         {
           questionid: questionid,
           userid: userid,
