@@ -16,8 +16,10 @@ const Answer = () => {
   const description = queryParams.get("description");
 
   const questionid = queryParams.get("questionid");
+  
 
   const { user } = useContext(AppState);
+  // console.log(user, "sdfghjklkjhgfdfghjkl")
 
   //  console.log(questionid,user.userid)
 
@@ -73,17 +75,26 @@ const Answer = () => {
 
       // console.log(response.data); // Log the response data
       setData(response.data);
+      console.log(response.data);
     } catch (error) {
       console.log(error.response);
     }
   }
 
+  // useEffect(() => {
+  //   getAnswer();
+  // }, []);
   useEffect(() => {
+    if (queryParams.get('reload') === 'true' && localStorage.getItem('reloaded') === 'true') {
+      localStorage.removeItem('reloaded');
+      window.location.reload();
+    }
     getAnswer();
-  }, []);
+     }, []);
+
 
   return (
-    <section>
+    <section className="mb-4">
       <Header />
       <div className="landing bg-body-tertiary  pt-3">
         <div className="container   pt-3">
@@ -121,7 +132,7 @@ const Answer = () => {
                       <div className="user">
                         {/* user */}
                         <div>
-                          <PiUserCircleDuotone />
+                          <PiUserCircleDuotone size={100} />
                         </div>
                         {/* <div>Fitsum </div> */}
                         <div>{item.username}</div>
@@ -164,7 +175,7 @@ const Answer = () => {
                 ></textarea>
               </div>
 
-              <div className=" mt-2">
+              <div className=" mt-2 mb-5 pb-4">
                 <button
                   className="btn btn-primary fw-bold px-5 action_btn"
                   type="Submit"
@@ -181,3 +192,5 @@ const Answer = () => {
 };
 
 export default Answer;
+
+

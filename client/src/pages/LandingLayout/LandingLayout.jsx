@@ -32,6 +32,7 @@ const LandingLayout = () => {
           <div className="col ">
             <p className="text-warning  fw-semibold">About</p>
             <h1 className="fw-bold">Evangadi Networks Q&A</h1>
+            <p>g@gmail.com  123456789</p>
             <div className="d-flex flex-column gap-4">
               <p>
                 No matter what stage of life you are in, whether you’re just

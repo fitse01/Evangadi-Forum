@@ -35,7 +35,8 @@ const SignUp = ({ setCurrentPage }) => {
       alert("register successfull. please login ");
 
 
-      navigate('/')
+      navigate('/Login')
+      window.location.reload();
     } catch (error) {
       console.log(error.message);
     }
