@@ -69,7 +69,7 @@ function Header() {
     <div class="collapse navbar-collapse justify-content-end fw-semibold " id="navbarNav">
       <ul class="navbar-nav"> 
         <li class="nav-item align-items-center d-flex">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li> 
         <li class="nav-item align-items-center d-flex"> 
           <a class="nav-link" href="#">How It Works </a>

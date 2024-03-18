@@ -50,15 +50,15 @@ function App() {
   useEffect(() => {
     checkUser();
     getQuestion();
-  }, []);
+  }, [navigate]);
 console.log(user)
-console.log(setuser)
+//console.log(setuser)
   return (
     <AppState.Provider value={{ user, setuser, question, setQuestion }}>
       <Routes>
         <Route path="/Login" element={<LandingLayout/>} />
         <Route path="/" element={<Home />} />
-        <Route path="/questions" element={<Question />} />
+        <Route path="/questions" element={<Question user={user} />} />
         <Route path="/answer" element={<Answer />} />
       </Routes>
       {/* <Footer/> */}

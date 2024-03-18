@@ -5,9 +5,9 @@ import axios from "../../axiosConfig";
 import { v4 as uuidv4 } from "uuid";
 import { AppState } from "../../App";
 
-const AskQuestion = () => {
+const AskQuestion = ({user}) => {
   const navigate = useNavigate();
-  const { user } = useContext(AppState);
+  //const  {user}  = useContext(AppState);
   console.log(user)
   const token = localStorage.getItem("token");
 
@@ -20,9 +20,9 @@ const AskQuestion = () => {
     const titleValue = titleDom.current.value;
     const descriptionValue = descriptionDom.current.value;
     const tagValue = tagDom.current.value;
-    const userid = await  user.userid;
+    const userid =   user.userid;
 
-    console.log(userid);
+   console.log(userid);
 
     const questionid = uuidv4();
     console.log(questionid)
@@ -65,7 +65,7 @@ const AskQuestion = () => {
       //  }
       setTimeout(() => {
         navigate("/");
-        window.location.reload();
+        //window.location.reload();
       }, 2000);
     } catch (error) {
       alert("something went wrong");
