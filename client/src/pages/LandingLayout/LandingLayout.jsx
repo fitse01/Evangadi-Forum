@@ -19,11 +19,13 @@ const LandingLayout = () => {
       >
         <section className="container d-md-flex pt-5 gap-5">
           {/* form  */}
-          {currentPage === "login" && <Login setCurrentPage={setCurrentPage}/>}
+          {currentPage === "login" && <Login setCurrentPage={setCurrentPage} />}
 
-          {currentPage === "signup" && (<SignUp setCurrentPage={setCurrentPage}/>)}
+          {currentPage === "signup" && (
+            <SignUp setCurrentPage={setCurrentPage} />
+          )}
 
-{/* {currentPage === "signup" && (
+          {/* {currentPage === "signup" && (
             <SignUp setCurrentPage={setCurrentPage} />
           )} */}
           {/* <Login /> */}
@@ -32,7 +34,6 @@ const LandingLayout = () => {
           <div className="col ">
             <p className="text-warning  fw-semibold">About</p>
             <h1 className="fw-bold">Evangadi Networks Q&A</h1>
-            <p>g@gmail.com  123456789</p>
             <div className="d-flex flex-column gap-4">
               <p>
                 No matter what stage of life you are in, whether you’re just
