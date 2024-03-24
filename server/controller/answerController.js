@@ -1,7 +1,3 @@
-
-
-
-
 const dbConnection = require('../db/dbConfig')
 
 async function postAnswer(req, res) {
