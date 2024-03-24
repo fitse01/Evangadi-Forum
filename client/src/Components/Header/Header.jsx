@@ -1,14 +1,9 @@
-// import React from "react";
 import logo from "../../Assets/logo1.png";
 import "../../index.css";
-
-
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../App";
-// import evangadiLogo from "../../Images/evangadi-logo-header.png";
 import { AiOutlineMenu } from "react-icons/ai";
-// import classes from './header.module.css';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
