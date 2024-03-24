@@ -5,6 +5,7 @@ import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
+import "../../index.css"
 
 const Answer = () => {
   const location = useLocation();
@@ -16,10 +17,8 @@ const Answer = () => {
   const description = queryParams.get("description");
 
   const questionid = queryParams.get("questionid");
-  
 
   const { user } = useContext(AppState);
-  // console.log(user, "sdfghjklkjhgfdfghjkl")
 
   //  console.log(questionid,user.userid)
 
@@ -85,16 +84,18 @@ const Answer = () => {
   //   getAnswer();
   // }, []);
   useEffect(() => {
-    if (queryParams.get('reload') === 'true' && localStorage.getItem('reloaded') === 'true') {
-      localStorage.removeItem('reloaded');
+    if (
+      queryParams.get("reload") === "true" &&
+      localStorage.getItem("reloaded") === "true"
+    ) {
+      localStorage.removeItem("reloaded");
       window.location.reload();
     }
     getAnswer();
-     }, []);
-
+  }, []);
 
   return (
-    <section className="mb-4">
+    <section className="mb-5 m_bottom">
       <Header />
       <div className="landing bg-body-tertiary  pt-3">
         <div className="container   pt-3">
@@ -192,5 +193,3 @@ const Answer = () => {
 };
 
 export default Answer;
-
-
