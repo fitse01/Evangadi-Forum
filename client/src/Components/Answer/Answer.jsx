@@ -188,6 +188,7 @@ const Answer = () => {
                 >
                   Post your Answer
                 </button>
+                <ToastContainer />
               </div>
             </form>
           </div>

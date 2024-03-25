@@ -75,6 +75,7 @@ const AskQuestion = ({user}) => {
         navigate("/");
         //window.location.reload();
       }, 2000);
+      
     } catch (error) {
       notifyFailer();
       // alert("something went wrong");
@@ -150,6 +151,7 @@ const AskQuestion = ({user}) => {
               >
                 Post your Question
               </button>
+              <ToastContainer />
             </div>
           </form>
         </div>
