@@ -61,7 +61,7 @@ console.log(user)
         <Route path="/questions" element={<Question user={user} />} />
         <Route path="/answer" element={<Answer />} />
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </AppState.Provider>
   );
 }

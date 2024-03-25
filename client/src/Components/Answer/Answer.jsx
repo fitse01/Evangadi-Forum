@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
 import "../../index.css"
+import Footer from "../Footer/Footer.jsx";
 
 const Answer = () => {
   const location = useLocation();
@@ -188,6 +189,7 @@ const Answer = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </section>
   );
 };
