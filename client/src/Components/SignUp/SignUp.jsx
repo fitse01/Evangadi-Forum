@@ -1,4 +1,3 @@
-
 // import { useState, useRef } from "react";
 // import axios from "../../axiosConfig";
 // import { Link } from "react-router-dom";
@@ -50,7 +49,7 @@
 //       toast.error("Registration failed. Please try again.");
 //     }
 //   }
-  
+
 //   return (
 //     <div className="col card mt-3 p-4 text-center">
 //       <div>
@@ -151,12 +150,6 @@
 
 // export default SignUp;
 
-
-
-
-
-
-
 // import { useState, useRef } from "react";
 // import axios from "../../axiosConfig";
 // import { Link } from "react-router-dom";
@@ -208,7 +201,7 @@
 //       toast.error("Registration failed. Please try again.");
 //     }
 //   }
-  
+
 //   return (
 //     <div className="col card mt-3 p-4 text-center">
 //       <div>
@@ -307,12 +300,6 @@
 
 // export default SignUp;
 
-
-
-
-
-
-
 import { useState, useRef } from "react";
 import axios from "../../axiosConfig";
 import { Link } from "react-router-dom";
@@ -322,7 +309,8 @@ import "../../index.css";
 
 const SignUp = ({ setCurrentPage }) => {
   const notifySuccess = () => toast("Registration successful. Please login");
-  const notifyIncomplete = () => toast("Registration failed. Please provide full information");
+  const notifyIncomplete = () =>
+    toast("Registration failed. Please provide full information");
 
   const usernameDom = useRef();
   const firstnameDom = useRef();
@@ -372,7 +360,7 @@ const SignUp = ({ setCurrentPage }) => {
     // Reset passwordError state
     setPasswordError(false);
   }
-  
+
   return (
     <div className="col card mt-3 p-4 text-center">
       <div>
@@ -424,10 +412,14 @@ const SignUp = ({ setCurrentPage }) => {
             type="password"
             ref={passwordDom}
             placeholder="Password"
-            className={`form-control p-3 ${passwordError ? "border border-danger" : ""}`}
+            className={`form-control p-3 ${
+              passwordError ? "border border-danger" : ""
+            }`}
           />
           {passwordError && (
-            <p className="text-danger">Password must be at least 8 characters</p>
+            <p className="text-danger">
+              Password must be at least 8 characters
+            </p>
           )}
         </div>
 
