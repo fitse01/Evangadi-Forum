@@ -3,9 +3,15 @@ import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import axios from "../../axiosConfig";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { AppState } from "../../App";
 
 const AskQuestion = ({user}) => {
+  const notifySuccess = () => toast("question posted successfully");
+  const notifyProvides = () => toast("please provide all required fields");
+  const notifyFailer= () => toast("something went wrong");
+  
   const navigate = useNavigate();
   //const  {user}  = useContext(AppState);
   console.log(user)
@@ -36,7 +42,8 @@ const AskQuestion = ({user}) => {
       !descriptionValue ||
       !tagValue
     ) {
-      alert("please provide all required fields");
+      notifyProvides();
+      // alert("please provide all required fields");
       return;
     }
 
@@ -63,12 +70,14 @@ const AskQuestion = ({user}) => {
       //  if(response.status==201){
       //   setMessage(response.data.msg)
       //  }
+      notifySuccess()
       setTimeout(() => {
         navigate("/");
         //window.location.reload();
       }, 2000);
     } catch (error) {
-      alert("something went wrong");
+      notifyFailer();
+      // alert("something went wrong");
       console.log(error.response);
     }
   }

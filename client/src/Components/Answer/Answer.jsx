@@ -5,9 +5,14 @@ import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../../index.css";
 
 const Answer = () => {
+
+  const notifySuccess = () => toast("Answer posted successfully");
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -55,7 +60,7 @@ const Answer = () => {
       );
       answerDom.current.value = "";
 
-      alert("answer posted succesfully");
+      notifySuccess();
       window.location.reload();
     } catch (error) {
       alert(" something went wrong");
