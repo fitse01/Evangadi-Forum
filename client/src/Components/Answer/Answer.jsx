@@ -5,8 +5,7 @@ import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
-import "../../index.css";
-import Footer from "../Footer/Footer.jsx";
+import "../../index.css"
 
 const Answer = () => {
   const location = useLocation();
@@ -96,7 +95,7 @@ const Answer = () => {
   }, []);
 
   return (
-    <section className=" m_bottom answerContainer">
+    <section className="mb-5 m_bottom answerContainer">
       <Header />
       <div className="landing bg-body-tertiary  pt-3">
         <div className="container   pt-3">
@@ -153,7 +152,7 @@ const Answer = () => {
           </div>
         </div>
 
-        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-5  m_bottom bg-body rounded">
+        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-5 bg-body rounded">
           <div className="mt-5 pt-4">
             {/* Ask Q Part */}
             <div>
@@ -189,7 +188,6 @@ const Answer = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </section>
   );
 };
