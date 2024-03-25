@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../App";
 import { AiOutlineMenu } from "react-icons/ai";
 
-function Header() {
+function Header({ setCurrentPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const { user,setuser } = useContext(AppState);
@@ -18,6 +18,9 @@ function Header() {
     } else {
       navigate("/");
     }
+  
+    // Add the logic to set the currentPage state after the conditional check
+    setCurrentPage("login");
   };
 
   const logout = () => {
@@ -74,7 +77,7 @@ function Header() {
           {isLoggedIn ? (
                 <button className="btn btn-primary fw-bold px-5 action_btn" onClick={handleButtonClick}>Logout</button>
               ) : (
-                <button className="btn btn-primary fw-bold px-5 action-btn" onClick={handleButtonClick}>Sign In</button>
+                <button className="btn btn-primary fw-bold px-5 action-btn" onClick={handleButtonClick} >Sign In</button>
               )}
           </a>
         </li>

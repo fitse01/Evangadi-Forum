@@ -8,7 +8,7 @@ const LandingLayout = () => {
   const [currentPage, setCurrentPage] = useState("signup");
   return (
     <section >
-      <Header />
+      <Header setCurrentPage={setCurrentPage}/>
       <main
         className="landing bg-body-tertiary "
         style={{
