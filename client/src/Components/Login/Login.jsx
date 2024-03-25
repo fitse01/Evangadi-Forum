@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
 import axios from "../../axiosConfig";
 import { Link, useNavigate } from "react-router-dom";
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = ({ setCurrentPage }) => {
+
+  const notify = () => toast("login successfull.");
+
   const navigate = useNavigate();
   const emailDom = useRef();
   const passwordDom = useRef();
@@ -24,7 +27,7 @@ const Login = ({ setCurrentPage }) => {
         email: emailValue,
         password: passValue,
       });
-      alert("login successful.  ");
+      // alert("login successful.  ");
       localStorage.setItem("token", data.token);
       
       navigate('/');
@@ -80,7 +83,9 @@ const Login = ({ setCurrentPage }) => {
           <button
             className="btn btn-primary fw-bold px-5 action_btn"
             type="Submit"
+            onClick={notify}
           >
+            <ToastContainer />
             Login
           </button>
         </div>
