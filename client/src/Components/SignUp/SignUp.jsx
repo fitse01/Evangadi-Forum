@@ -2,8 +2,12 @@
 import { useRef } from "react";
 import axios from "../../axiosConfig";
 import { Link , useNavigate} from'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = ({ setCurrentPage }) => {
+  const notify = () => toast("register successfull. please login");
+
   const navigate = useNavigate();
   const usernameDom = useRef();
   const firstnameDom = useRef();
@@ -32,7 +36,7 @@ const SignUp = ({ setCurrentPage }) => {
         email: emailValue,
         password: passValue,
       });
-      alert("register successfull. please login ");
+      // alert("register successfull. please login ");
 
 
       navigate('/')
@@ -126,9 +130,11 @@ const SignUp = ({ setCurrentPage }) => {
           <button
             className="btn btn-primary fw-bold px-5 action_btn "
             type="submit"
+            onClick={notify}
           >
             Agree and Join
           </button>
+          <ToastContainer />
         </div>
 
         <div className="">
