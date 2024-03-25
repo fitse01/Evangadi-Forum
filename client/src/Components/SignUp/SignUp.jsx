@@ -98,7 +98,7 @@ const SignUp = ({ setCurrentPage }) => {
           <input
             type="password"
             ref={passwordDom}
-            placeholder="Password"
+            placeholder="Password must be above 8 character"
             className="form-control p-3"
           />
         </div>
