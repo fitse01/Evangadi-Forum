@@ -95,7 +95,7 @@ const Answer = () => {
   }, []);
 
   return (
-    <section className="mb-5 m_bottom">
+    <section className=" m_bottom answerContainer">
       <Header />
       <div className="landing bg-body-tertiary  pt-3">
         <div className="container   pt-3">

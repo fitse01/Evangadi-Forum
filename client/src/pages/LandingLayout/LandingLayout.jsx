@@ -7,7 +7,7 @@ import SignUp from "../../Components/SignUp/SignUp";
 const LandingLayout = () => {
   const [currentPage, setCurrentPage] = useState("signup");
   return (
-    <section>
+    <section >
       <Header />
       <main
         className="landing bg-body-tertiary "
