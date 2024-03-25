@@ -97,7 +97,7 @@ const Answer = () => {
   return (
     <section className="mb-5 m_bottom answerContainer">
       <Header />
-      <div className="landing bg-body-tertiary  pt-3 mb-5">
+      <div className=" bg-body-tertiary  pt-3 mb-5">
         <div className="container   pt-3">
           {/* Question answer title and   answer */}
           <div className="">
