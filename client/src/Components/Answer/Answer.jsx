@@ -5,7 +5,7 @@ import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
-import "../../index.css"
+import "../../index.css";
 import Footer from "../Footer/Footer.jsx";
 
 const Answer = () => {
@@ -153,7 +153,7 @@ const Answer = () => {
           </div>
         </div>
 
-        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-5 bg-body rounded">
+        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-5  m_bottom bg-body rounded">
           <div className="mt-5 pt-4">
             {/* Ask Q Part */}
             <div>
@@ -189,7 +189,7 @@ const Answer = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </section>
   );
 };
