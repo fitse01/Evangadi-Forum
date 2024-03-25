@@ -5,7 +5,7 @@ import { AppState } from "../../App.jsx";
 import Header from "../Header/Header";
 import { PiUserCircleDuotone } from "react-icons/pi";
 import { FaAngleRight } from "react-icons/fa6";
-import "../../index.css"
+import "../../index.css";
 
 const Answer = () => {
   const location = useLocation();
@@ -97,7 +97,7 @@ const Answer = () => {
   return (
     <section className="mb-5 m_bottom answerContainer">
       <Header />
-      <div className="landing bg-body-tertiary  pt-3">
+      <div className="landing bg-body-tertiary  pt-3 mb-5">
         <div className="container   pt-3">
           {/* Question answer title and   answer */}
           <div className="">
@@ -152,8 +152,8 @@ const Answer = () => {
           </div>
         </div>
 
-        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-5 bg-body rounded">
-          <div className="mt-5 pt-4">
+        <div className="d-flex flex-column align-items-center container  shadow-sm p-2 mb-3 bg-body rounded">
+          <div className="mt-2 pt-4">
             {/* Ask Q Part */}
             <div>
               <h3>Answer the Top Question </h3>
@@ -176,7 +176,7 @@ const Answer = () => {
                 ></textarea>
               </div>
 
-              <div className=" mt-2 mb-5 pb-4">
+              <div className=" mt-2 mb-3 pb-4">
                 <button
                   className="btn btn-primary fw-bold px-5 action_btn"
                   type="Submit"
