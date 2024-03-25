@@ -10,7 +10,7 @@ const LandingLayout = () => {
     <section >
       <Header setCurrentPage={setCurrentPage}/>
       <main
-        className="landing bg-body-tertiary "
+        className="bg-body-tertiary "
         style={{
           background: `url(${bg})`,
           backgroundRepeat: "no-repeat",
