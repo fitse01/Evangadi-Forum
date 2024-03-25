@@ -22,8 +22,8 @@
 .answerContainer{
   position: absolute;
   margin-bottom: 130px;
-  /* height: 100vh; */
+  height: 100vh;
 }
 .container{
-  /* position: relative; */
+  position: relative;
 }
