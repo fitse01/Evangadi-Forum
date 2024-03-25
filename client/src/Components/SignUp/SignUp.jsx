@@ -1,9 +1,10 @@
 // import React from "react";
 import { useRef } from "react";
 import axios from "../../axiosConfig";
-import { Link , useNavigate} from'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "../../index.css";
 
 const SignUp = ({ setCurrentPage }) => {
   const notify = () => toast("register successfull. please login");
@@ -22,7 +23,13 @@ const SignUp = ({ setCurrentPage }) => {
     const lastValue = lastnameDom.current.value;
     const emailValue = emailDom.current.value;
     const passValue = passwordDom.current.value;
-    if (!usernameValue || !firstValue || !lastValue || !emailValue || !passValue) {
+    if (
+      !usernameValue ||
+      !firstValue ||
+      !lastValue ||
+      !emailValue ||
+      !passValue
+    ) {
       alert("please provide all required information ");
       return;
     }
@@ -38,8 +45,7 @@ const SignUp = ({ setCurrentPage }) => {
       });
       // alert("register successfull. please login ");
 
-
-      navigate('/')
+      navigate("/");
       window.location.reload();
     } catch (error) {
       console.log(error.message);
@@ -67,7 +73,7 @@ const SignUp = ({ setCurrentPage }) => {
           </a>
         </p>
       </div>
-      <form action=""  onSubmit={handleSubmit}>
+      <form action="" onSubmit={handleSubmit}>
         <div className="d-flex flex-column gap-3">
           <input
             type="text"
@@ -76,7 +82,7 @@ const SignUp = ({ setCurrentPage }) => {
             className="form-control p-3"
           />
 
-          <div className="d-flex">
+          <div className="d-flex firstLastNaame">
             <input
               type="text"
               ref={firstnameDom}
@@ -86,7 +92,7 @@ const SignUp = ({ setCurrentPage }) => {
 
             <input
               type="text"
-              ref={lastnameDom} 
+              ref={lastnameDom}
               placeholder="LastName"
               className="form-control"
             />
