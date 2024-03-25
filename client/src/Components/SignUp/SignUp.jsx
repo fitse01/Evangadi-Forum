@@ -5,6 +5,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../../index.css";
 
+import { FaEyeSlash } from "react-icons/fa";
+
 const SignUp = ({ setCurrentPage }) => {
   const notifySuccess = () => toast("Registration successful. Please login");
   const notifyIncomplete = () =>
@@ -113,6 +115,7 @@ const SignUp = ({ setCurrentPage }) => {
             className={`form-control p-3 ${
               passwordError ? "border border-danger" : ""
             }`}
+            
           />
           {passwordError && (
             <p className="text-danger">

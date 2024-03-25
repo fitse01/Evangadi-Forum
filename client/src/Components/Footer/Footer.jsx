@@ -49,10 +49,10 @@ function Footer() {
                   <a className="text-decoration-none" href="/explained">How it works </a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="/legal/terms/">Terms of Service</a>
+                  <a className="text-decoration-none" href="https://www.evangadi.com/legal/terms/">Terms of Service</a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="/legal/privacy/">Privacy policy</a>
+                  <a className="text-decoration-none" href="https://www.evangadi.com/legal/privacy/">Privacy policy</a>
                 </li>
               </ul>
             </div>
