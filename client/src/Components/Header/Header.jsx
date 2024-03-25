@@ -8,7 +8,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 function Header({ setCurrentPage }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
-  const { user,setuser } = useContext(AppState);
+  const { user, setuser } = useContext(AppState);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 760);
 
@@ -18,13 +18,13 @@ function Header({ setCurrentPage }) {
     } else {
       navigate("/");
     }
-  
+
     // Add the logic to set the currentPage state after the conditional check
     setCurrentPage("login");
   };
 
   const logout = () => {
-   setuser(null);
+    setuser(null);
     localStorage.setItem("token", "");
     setIsLoggedIn(false);
     navigate("/Login");
@@ -33,10 +33,10 @@ function Header({ setCurrentPage }) {
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
     if (storedToken) {
-     setuser({});
+      setuser({});
       setIsLoggedIn(true);
     } else {
-     setuser(null);
+      setuser(null);
       setIsLoggedIn(false);
     }
   }, [setuser]);
@@ -55,38 +55,67 @@ function Header({ setCurrentPage }) {
 
   return (
     <section className="section_container">
-
-
-
-<nav class="navbar p-3 navbar-expand-lg ">
-  <div class="container   section_container">
-    <a class="navbar-brand logo" href="#"><img className="evaLogo" src={logo} alt="evangadi-logo" /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <nav className="navbar p-3 navbar-expand-lg">
+  <div className="container section_container">
+    <a className="navbar-brand logo" href="#">
+      <img className="evaLogo" src={logo} alt="evangadi-logo" />
+    </a>
+    <button
+      className="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end fw-semibold " id="navbarNav">
-      <ul class="navbar-nav"> 
-        <li class="nav-item align-items-center d-flex">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li> 
-        <li class="nav-item align-items-center d-flex"> 
-          <a class="nav-link" href="#">How It Works </a>
-        </li>
-        <li class="nav-item align-items-center d-flex">
-          <a class="nav-link" href="#">
-          {isLoggedIn ? (
-                <button className="btn btn-primary fw-bold px-5 action_btn" onClick={handleButtonClick}>Logout</button>
-              ) : (
-                <button className="btn btn-primary fw-bold px-5 action-btn" onClick={handleButtonClick} >Sign In</button>
-              )}
+    <div
+      className="collapse navbar-collapse justify-content-end fw-semibold"
+      id="navbarNav"
+    >
+      <ul className="navbar-nav ml-auto"> {/* Add 'ml-auto' class to align items to the right */}
+        <li className="nav-item align-items-center d-flex">
+          <a className="nav-link active" aria-current="page" href="/">
+            Home
           </a>
         </li>
-        
+        <li className="nav-item align-items-center d-flex">
+          <a className="nav-link" href="#">
+            How It Works
+          </a>
+        </li>
+        <li className="nav-item align-items-center d-flex">
+          <a className="nav-link" href="#">
+            {isLoggedIn ? (
+              <button
+                className="btn btn-primary fw-bold px-5 action_btn"
+                onClick={handleButtonClick}
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                className="btn btn-primary fw-bold px-5 action-btn"
+                onClick={handleButtonClick}
+              >
+                Sign In
+              </button>
+            )}
+          </a>
+        </li>
       </ul>
+      <style>
+        {`
+          .navbar-nav.ml-auto {
+            margin-left: auto;
+          }
+        `}
+      </style>
     </div>
   </div>
 </nav>
-
     </section>
   );
 }
