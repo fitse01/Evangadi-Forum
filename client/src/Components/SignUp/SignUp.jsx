@@ -70,7 +70,7 @@ const SignUp = ({ setCurrentPage }) => {
   }
 
   return (
-    <div className="col card mt-3 p-4 text-center">
+    <div className="col card mt-3 mb-5 p-4 text-center">
       <div>
         <h4 className="m-3"> Join the network</h4>
         <p className="mb-2">

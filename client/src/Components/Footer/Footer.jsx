@@ -1,6 +1,8 @@
 import { AiFillFacebook } from "react-icons/ai";
 import { TiSocialInstagram } from "react-icons/ti";
 import { AiFillYoutube } from "react-icons/ai";
+import logo from "../../Assets/ASTU.jpg"
+
 
 import  './footer.css'
 function Footer() {
@@ -12,10 +14,13 @@ function Footer() {
             <div className="col-lg-4 col-md-4">
               <div className="logo-footer">
                 <a className="navbar-brand" href="/">
-                  <img
-                    src="https://www.evangadi.com/themes/humans//assets/images/misc/evangadi-logo-home.png"
-                    alt="evangadi logo"
-                  />
+                <a className="navbar-brand logo py-3" href="/">
+                  {/* <img className="evaLogo" src={logo} alt="evangadi-logo" /> */}
+                  <div className="d-flex gap-5">
+                    <h1 style={{color:"white"}}>ASTU FORUM </h1>
+                    <img src={logo} className="evaLogo w-20" style={{width:"60px" , height:"60px" ,borderRadius:"50%"}} alt="" />
+                  </div>
+                </a>
                 </a>
                 
               </div>
@@ -49,10 +54,10 @@ function Footer() {
                   <a className="text-decoration-none" href="/explained">How it works </a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="https://www.evangadi.com/legal/terms/">Terms of Service</a>
+                  <a className="text-decoration-none" href="https://www.astu.edu.et/">Terms of Service</a>
                 </li>
                 <li>
-                  <a className="text-decoration-none" href="https://www.evangadi.com/legal/privacy/">Privacy policy</a>
+                  <a className="text-decoration-none" href="https://www.astu.edu.et/">Privacy policy</a>
                 </li>
               </ul>
             </div>
@@ -60,9 +65,9 @@ function Footer() {
              
               <ul className="list-menu contact-list">
               <h5 className="">Contact Info</h5>
-                <li>Evangadi Networks</li>
-                <li>support@evangadi.com</li>
-                <li>+1-202-386-2702</li>
+                <li><a href="https://www.astu.edu.et/">ASTU Networks</a ></li>
+                <li><a href="https://www.astu.edu.et/">support@ASTU.com</a ></li>
+                <li><a href="https://www.astu.edu.et/">+1-202-386-2702</a ></li>
               </ul>
             </div>
           </div>

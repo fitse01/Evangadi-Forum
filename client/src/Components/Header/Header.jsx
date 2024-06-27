@@ -1,4 +1,5 @@
-import logo from "../../Assets/logo1.png";
+// import logo from "../../Assets/logo1.png";
+import logo from "../../Assets/ASTU.jpg"
 import "../../index.css";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -54,11 +55,14 @@ function Header({ setCurrentPage }) {
   };
 
   return (
-    <section className="section_container">
+    <section className="section_container py-3 my-1">
   <nav className="navbar p-3 navbar-expand-lg">
   <div className="container section_container">
-    <a className="navbar-brand logo" href="#">
-      <img className="evaLogo" src={logo} alt="evangadi-logo" />
+    <a className="navbar-brand logo py-3" href="/">  
+      <div>
+        <h1>ASTU FORUM </h1>
+        <img src={logo} className="evaLogo w-20" style={{width:"60px" , height:"60px" }} alt="" />
+      </div>
     </a>
     <button
       className="navbar-toggler"
@@ -76,6 +80,11 @@ function Header({ setCurrentPage }) {
       id="navbarNav"
     >
       <ul className="navbar-nav ml-auto"> {/* Add 'ml-auto' class to align items to the right */}
+        <li className="nav-item align-items-center d-flex">
+          <a className="nav-link active" aria-current="page" href="/astuHome">
+            ASTU-Home
+          </a>
+        </li>
         <li className="nav-item align-items-center d-flex">
           <a className="nav-link active" aria-current="page" href="/">
             Home

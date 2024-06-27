@@ -33,7 +33,7 @@ const LandingLayout = () => {
           {/* message */}
           <div className="col ">
             <p className="text-warning  fw-semibold">About</p>
-            <h1 className="fw-bold">Evangadi Networks Q&A</h1>
+            <h1 className="fw-bold">Adama Science and Technology University Q&A</h1>
             <div className="d-flex flex-column gap-4">
               <p>
                 No matter what stage of life you are in, whether you’re just

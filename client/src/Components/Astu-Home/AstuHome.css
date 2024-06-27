@@ -1,0 +1,21 @@
+.Banner{
+    background-image: url(../../Assets/UNI/Banner2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: black; */
+    height: 80vh;
+}
+.Banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.text p{
+    width: 40%;
+}
+.text h2{
+    font-size: 100px !important;
+    } 

@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Question from "./Components/AskQuestion/AskQuestion";
 import Answer from "./Components/Answer/Answer";
 import Footer from "./Components/Footer/Footer";
+import AstuHome from "./Components/Astu-Home/AstuHome";
 
 export const AppState = createContext();
 
@@ -58,6 +59,7 @@ console.log(user)
       <Routes>
         <Route path="/Login" element={<LandingLayout/>} />
         <Route path="/" element={<Home />} />
+        <Route path="/astuHome" element={<AstuHome/>} />
         <Route path="/questions" element={<Question user={user} />} />
         <Route path="/answer" element={<Answer />} />
       </Routes>
